@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: url("bg.jpg") no-repeat center top / cover;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+}
+
+/* Screen Card */
+.screen {
+  background: #121215;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+/* Header */
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+}
+
+.screen-header-left {
+  display: flex;
+  gap: 6px;
+}
+
+.screen-header-button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.close { background: #df0b52; }
+.maximize { background: #e8e925; }
+.minimize { background: #74c54f; }
+
+.screen-header-right {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+
+.screen-header-ellipsis {
+  width: 4px;
+  height: 4px;
+  background: #888;
+  border-radius: 50%;
+}
+
+/* Body */
+.screen-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Left Section */
+.screen-body-item.left {
+  flex: 1;
+  min-width: 260px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #f018f0;
+  line-height: 1.2;
+}
+
+.app-title::after {
+  content: "";
+  width: 30px;
+  height: 4px;
+  background: #f018f0;
+  margin-top: 10px;
+  display: block;
+}
+
+.app-contact {
+  margin-top: auto;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Right Section */
+.screen-body-item {
+  flex: 1;
+  min-width: 260px;
+  padding: 40px;
+}
+
+/* Form */
+.app-form-group {
+  margin-bottom: 18px;
+}
+
+.app-form-control {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #666;
+  padding: 12px 4px;
+  font-size: 14px;
+  color: #fff;
+  outline: none;
+}
+
+.app-form-control::placeholder {
+  color: #777;
+}
+
+.app-form-control:focus {
+  border-bottom-color: #f018f0;
+}
+
+/* Textarea */
+textarea.app-form-control {
+  resize: none;
+  min-height: 90px;
+}
+
+/* Buttons */
+.app-form-group.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.app-form-button {
+  background: transparent;
+  border: none;
+  color: #f018f0;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.app-form-button:hover {
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .screen-body-item,
+  .screen-body-item.left {
+    padding: 25px;
+  }
+
+  .app-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .app-form-group.buttons {
+    justify-content: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<form action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="c24a5a40-b730-45a8-ad90-0e0f300b1131">
+
+<div class="screen">
+
+  <div class="screen-header">
+    <div class="screen-header-left">
+      <div class="screen-header-button close"></div>
+      <div class="screen-header-button maximize"></div>
+      <div class="screen-header-button minimize"></div>
+    </div>
+    <div class="screen-header-right">
+      <div class="screen-header-ellipsis"></div>
+      <div class="screen-header-ellipsis"></div>
+      <div class="screen-header-ellipsis"></div>
+    </div>
+  </div>
+
+  <div class="screen-body">
+    <div class="screen-body-item left">
+      <div class="app-title">
+        <span>CONTACT</span>
+        <span>US</span>
+      </div>
+      <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div>
+    </div>
+
+    <div class="screen-body-item">
+      <div class="app-form">
+        <div class="app-form-group">
+          <input class="app-form-control" type="text" name="name" placeholder="NAME" required>
+        </div>
+        <div class="app-form-group">
+          <input class="app-form-control" type="email" name="email" placeholder="EMAIL" required>
+        </div>
+        <div class="app-form-group">
+          <input class="app-form-control" type="tel" name="contact" placeholder="CONTACT NO">
+        </div>
+        <div class="app-form-group">
+          <textarea class="app-form-control" name="message" placeholder="MESSAGE" required></textarea>
+        </div>
+        <div class="app-form-group buttons">
+          <button class="app-form-button" type="reset">CANCEL</button>
+          <button class="app-form-button" type="submit">SEND</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</form>
+</div>
+
+</body>
+</html>

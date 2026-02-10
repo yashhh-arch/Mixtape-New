@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MixTape – Music Experience</title>
+  <link rel="icon" type="image/png" href="static/Favicon2.png">
+
+  <link rel="stylesheet" href="static/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-dark: #020617;
+  --accent: #6d5dfc;
+  --accent-2: #38bdf8;
+  --card-bg: rgba(255,255,255,0.06);
+  --muted: #94a3b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(109,93,252,0.18), transparent 40%),
+    linear-gradient(180deg, #020617, #020617);
+  color: white;
+}
+
+/* ================= NAVBAR ================= */
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 6%;
+  }
+  
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.8;
+  }
+  
+  .nav-links a:hover {
+    opacity: 1;
+  }
+  
+  .cta-btn {
+    background: linear-gradient(135deg, #6d5dfc, #4a3aff);
+    border: none;
+    padding: 10px 18px;
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  /* Mobile Menu */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 50%;
+    background-color: #111;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+    color: #fff;
+  }
+}
+
+/* ================= HERO ================= */
+.container {
+  padding: 90px 20px 70px;
+  text-align: center;
+}
+
+.container h1 {
+  font-size: clamp(2.8rem, 5vw, 3.8rem);
+  font-weight: 900;
+  margin-bottom: 18px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container p {
+  color: var(--muted);
+  max-width: 600px;
+  margin: auto;
+}
+
+/* ================= BUTTON GRID ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  max-width: 900px;
+  margin: 70px auto 0;
+}
+
+/* ================= TOOL BUTTON ================= */
+.tool-btn {
+  height: 150px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.03)
+  );
+  backdrop-filter: blur(14px);
+  color: white;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  position: relative;
+}
+
+.tool-btn span {
+  font-size: 34px;
+}
+
+.tool-btn:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(109,93,252,0.35);
+}
+
+/* ================= INFO SECTION ================= */
+.info {
+  padding: 120px 6%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+}
+
+.info-card {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border-radius: 24px;
+  padding: 36px;
+  color: #020617;
+  transition: all 0.35s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(2,6,23,0.15);
+}
+
+.info-card h3 {
+  margin-bottom: 12px;
+}
+
+.info-card p {
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  padding: 70px 6% 30px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">MIXTAPE
+        <!-- <img src="/Users/shwetasharadjadhav/Desktop/Project 26/web_dev/static/images/logo.png" alt="MixTape Logo"> -->
+      </div>
+      
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+      <button class="cta-btn">Start Mixing</button>
+    </nav>
+
+    <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+  </header>
+
+<!-- HERO -->
+<section class="container">
+  <h1>Master With Confidence</h1>
+  <p>
+    Professional audio tools built for creators who care about sound quality.
+    Upload, refine, and export with ease.
+  </p>
+
+  <!-- TOOLS -->
+  <div class="grid">
+    <button class="tool-btn" id="trimAudio">✂️ Trim Audio</button>
+    <button class="tool-btn" id="speedAudio">🎚️ Speed Changer</button>
+    <button class="tool-btn" id="reverseAudio">⏪ Reverse</button>
+    <button class="tool-btn" id="mergeAudio">🎧 Merge Audio</button>
+    <button class="tool-btn" id="pitchAudio">🎼 Pitch Shift</button>
+    <button class="tool-btn" id="volumizeAudio">🔊 Volumize</button>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="info">
+  <div class="info-card">
+    <h2>Audio Trim</h2> <p>Precisely remove unwanted segments while preserving studio-grade quality.</p>
+  </div>
+  <div class="info-card">
+    <h2>Merge Audio</h2> <p>Combine multiple tracks into a seamless, professional audio output.</p>
+  </div>
+  <div class="info-card">
+    <h2>Speed Changer</h2> <p>Fine-tune playback speed for learning, remixing, or content creation.</p>
+  </div>
+  <div class="info-card">
+    <h2>Split Audio</h2> <p>Segment long recordings into clean, organized audio files.</p>  </div>
+  <div class="info-card">
+    <h2>Cut Audio</h2> <p>Remove specific portions without affecting surrounding audio quality.</p> </div>  </div>
+    <div class="info-card">
+        <h2>Reverse Audio</h2> <p>Create unique sound effects with instant reverse processing.</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 MixTape. Crafted for creators.
+</footer>
+
+<!-- ROUTES (UNCHANGED) -->
+<script src="static/script.js"></script>
+
+<script>
+
+const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+document.getElementById("trimAudio").onclick = () => location.href="/trim";
+document.getElementById("mergeAudio").onclick = () => location.href="/merge";
+document.getElementById("speedAudio").onclick = () => location.href="/speed";
+document.getElementById("pitchAudio").onclick = () => location.href="/pitch";
+document.getElementById("volumizeAudio").onclick = () => location.href="/volumize";
+document.getElementById("reverseAudio").onclick = () => location.href="/reverse";
+</script>
+
+</body>
+</html>
